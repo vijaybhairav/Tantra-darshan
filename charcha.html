@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>मन की बात — चर्चा मंच | तंत्र दर्शन</title>
+
+  <meta name="description"
+        content="मन की बात — तंत्र दर्शन के चर्चा मंच पर अपने विचार, प्रश्न और अनुभव साझा करें।">
+
+  <style>
+    :root{
+      --bg:#07050b;
+      --panel:#171025;
+      --gold:#e8b85a;
+      --cream:#f7f0df;
+      --muted:#b8aec7;
+      --line:#3b2858;
+      --accent:#7c4dff;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 50% -10%,#43206a 0,#120b1d 34%,#07050b 72%);
+      color:var(--cream);
+      font-family:
+        system-ui,
+        -apple-system,
+        "Noto Sans Devanagari",
+        sans-serif;
+      line-height:1.7;
+      min-height:100vh;
+    }
+
+    .container{
+      width:min(900px,92%);
+      margin:auto;
+      padding:30px 0 50px;
+    }
+
+    header{
+      text-align:center;
+      padding:25px 10px 20px;
+    }
+
+    .symbol{
+      font-size:42px;
+      margin-bottom:5px;
+    }
+
+    h1{
+      margin:0;
+      color:var(--gold);
+      font-size:clamp(28px,7vw,44px);
+    }
+
+    .subtitle{
+      color:var(--muted);
+      margin-top:8px;
+      font-size:16px;
+    }
+
+    .card{
+      background:rgba(23,16,37,.92);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      margin-top:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .card h2{
+      margin-top:0;
+      color:var(--gold);
+      font-size:23px;
+    }
+
+    .intro{
+      color:var(--cream);
+      font-size:16px;
+    }
+
+    label{
+      display:block;
+      margin:15px 0 7px;
+      color:var(--gold);
+      font-weight:600;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#0d0915;
+      color:var(--cream);
+      font-size:16px;
+      outline:none;
+      font-family:inherit;
+    }
+
+    input:focus,
+    textarea:focus{
+      border-color:var(--gold);
+    }
+
+    textarea{
+      min-height:150px;
+      resize:vertical;
+    }
+
+    button{
+      width:100%;
+      margin-top:18px;
+      padding:14px 18px;
+      border:0;
+      border-radius:12px;
+      background:linear-gradient(135deg,#e8b85a,#b98224);
+      color:#160e04;
+      font-size:17px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    button:hover{
+      opacity:.9;
+    }
+
+    .notice{
+      margin-top:15px;
+      padding:13px;
+      border-left:3px solid var(--gold);
+      background:rgba(232,184,90,.07);
+      color:var(--muted);
+      font-size:14px;
+      border-radius:8px;
+    }
+
+    .discussion{
+      margin-top:25px;
+    }
+
+    .post{
+      background:#0d0915;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      margin-top:14px;
+    }
+
+    .post-name{
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .post-time{
+      color:#80758f;
+      font-size:12px;
+    }
+
+    .post-message{
+      margin-top:8px;
+      white-space:pre-wrap;
+      color:var(--cream);
+    }
+
+    .empty{
+      text-align:center;
+      color:var(--muted);
+      padding:20px 5px;
+    }
+
+    .back{
+      display:block;
+      text-align:center;
+      margin-top:25px;
+      color:var(--gold);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .back:hover{
+      text-decoration:underline;
+    }
+
+    footer{
+      text-align:center;
+      color:#80758f;
+      font-size:13px;
+      margin-top:35px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <div class="symbol">🌿</div>
+      <h1>मन की बात</h1>
+      <div class="subtitle">चर्चा मंच — तंत्र दर्शन</div>
+    </header>
+
+    <section class="card">
+      <h2>🕉️ अपनी बात साझा करें</h2>
+
+      <p class="intro">
+        मन में कोई प्रश्न है, कोई विचार है या अध्यात्म और साधना से जुड़ा
+        कोई अनुभव साझा करना चाहते हैं, तो यहाँ लिख सकते हैं।
+        हर व्यक्ति की बात का सम्मान करना इस मंच का उद्देश्य है।
+      </p>
+
+      <form id="discussionForm">
+
+        <label for="name">आपका नाम / उपनाम</label>
+
+        <input
+          type="text"
+          id="name"
+          placeholder="जैसे — साधक, विजय, शिवभक्त..."
+          maxlength="40"
+          required
+        >
+
+        <label for="message">अपनी बात लिखें</label>
+
+        <textarea
+          id="message"
+          placeholder="यहाँ अपनी बात, प्रश्न या विचार लिखें..."
+          maxlength="1000"
+          required
+        ></textarea>
+
+        <button type="submit">
+          🌿 बात साझा करें
+        </button>
+
+      </form>
+
+      <div class="notice">
+        🙏 कृपया चर्चा में सम्मानजनक भाषा का प्रयोग करें।
+        किसी व्यक्ति को अपमानित करने, परेशान करने या निजी जानकारी साझा करने से बचें।
+      </div>
+    </section>
+
+    <section class="card discussion">
+
+      <h2>💬 लोगों की बातें</h2>
+
+      <div id="posts">
+        <div class="empty">
+          अभी कोई चर्चा नहीं हुई है।<br>
+          आप पहली बात साझा कर सकते हैं। 🌿
+        </div>
+      </div>
+
+    </section>
+
+    <a class="back" href="index.html">
+      ← मुख्य पेज पर वापस जाएँ
+    </a>
+
+    <footer>
+      © तंत्र दर्शन — अध्यात्म और साधना
+    </footer>
+
+  </div>
+
+  <script>
+
+    const form = document.getElementById("discussionForm");
+    const posts = document.getElementById("posts");
+
+    function loadPosts(){
+
+      const savedPosts =
+        JSON.parse(localStorage.getItem("tantraDiscussion")) || [];
+
+      if(savedPosts.length === 0){
+        posts.innerHTML = `
+          <div class="empty">
+            अभी कोई चर्चा नहीं हुई है।<br>
+            आप पहली बात साझा कर सकते हैं। 🌿
+          </div>
+        `;
+        return;
+      }
+
+      posts.innerHTML = "";
+
+      savedPosts.forEach(post => {
+
+        const article = document.createElement("div");
+        article.className = "post";
+
+        article.innerHTML = `
+          <div class="post-name">
+            ${escapeHTML(post.name)}
+          </div>
+
+          <div class="post-time">
+            ${escapeHTML(post.time)}
+          </div>
+
+          <div class="post-message">
+            ${escapeHTML(post.message)}
+          </div>
+        `;
+
+        posts.appendChild(article);
+
+      });
+    }
+
+    form.addEventListener("submit", function(event){
+
+      event.preventDefault();
+
+      const name =
+        document.getElementById("name").value.trim();
+
+      const message =
+        document.getElementById("message").value.trim();
+
+      if(!name || !message){
+        alert("कृपया नाम और अपनी बात दोनों लिखें।");
+        return;
+      }
+
+      const savedPosts =
+        JSON.parse(localStorage.getItem("tantraDiscussion")) || [];
+
+      savedPosts.unshift({
+        name:name,
+        message:message,
+        time:new Date().toLocaleString("hi-IN")
+      });
+
+      localStorage.setItem(
+        "tantraDiscussion",
+        JSON.stringify(savedPosts)
+      );
+
+      form.reset();
+
+      loadPosts();
+
+      alert("आपकी बात इस डिवाइस पर साझा हो गई है। 🙏");
+
+    });
+
+    function escapeHTML(text){
+
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+
+    }
+
+    loadPosts();
+
+  </script>
+
+</body>
+</html>
